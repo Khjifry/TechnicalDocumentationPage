@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#document-container {
+    display: flex;
+    overflow: hidden;
+}
+
+nav {
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    width: 30vw;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    z-index: 3;
+
+}
+
+nav header {
+    font-size: 20px;
+    font-weight: bolder;
+    line-height: 60px;
+    text-align: center;
+}
+
+nav .fa-bars {
+    /*Why n if .fa-bars does not work?*/
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    padding: 2px 5px;
+    border: 1px solid white;
+    margin: 3px 0;
+}
+
+nav ul li .nav-link {
+    color: white;
+    font-size: 15px;
+    line-height: 15px;
+    text-decoration: none;
+}
+
+#main-doc {
+    padding: 5px 10px;
+    margin-left: 30vw;
+    width: 70vw;
+    text-align: justify;
+}
+
+.main-section {
+    min-height: 100vh;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.main-section#Reference {
+    min-height: max-content;
+}
+
+.main-section header {
+    font-size: 30px;
+}
+
+.main-section ul {
+    padding: 0 15px;
+}
+
+.footer-text {
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+
+    #document-container {
+        flex-direction: column;
+    }
+
+    nav {
+        display: flex;
+        height: 77px;
+        width: 100vw;
+        padding: 0;
+        position: fixed;
+        overflow-y: hidden;
+    }
+
+    nav header {
+        display: flex;
+        align-self: center;
+        padding: 5px 10px;
+        width: 70%;
+        text-align: left;
+        line-height: normal;
+    }
+
+    nav .fa-bars {
+        display: flex;
+        align-self: center;
+        text-align: right;
+        padding: 5px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.pop {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        background-color: black;
+        width: 100vw;
+        height: calc(100% - 70px);
+        /*Why if calc(100 + 70px) does not work, why using - ?*/
+        overflow: auto;
+        padding: 0 30px;
+    }
+
+    #main-doc {
+        width: 100vw;
+        margin-left: 0;
+        margin-top: 77px;
+    }
+}
